@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Team Abyss — Meet the void-walkers behind the collective.">
+  <meta name="theme-color" content="#050508">
+  <title>Team Abyss — Team</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="loading-screen" id="loading-screen" role="status" aria-label="Loading">
+    <div class="loading-symbol" aria-hidden="true">&#x25C8;</div>
+    <div class="loading-text">Awaiting Abyss</div>
+    <div class="loading-dots" aria-hidden="true">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+    </div>
+  </div>
+
+  <div class="cursor" role="presentation" aria-hidden="true"></div>
+  <div class="cursor-dot" role="presentation" aria-hidden="true"></div>
+  <div class="cursor-glow" role="presentation" aria-hidden="true"></div>
+
+  <canvas id="particle-canvas" role="presentation" aria-hidden="true"></canvas>
+
+  <nav class="side-nav" id="side-nav" role="navigation" aria-label="Side navigation">
+    <a href="index.html" class="side-item" data-page="index">
+      <span class="side-icon">&#x25C8;</span>
+      <span>Home</span>
+    </a>
+    <a href="team.html" class="side-item active" data-page="team" aria-current="page">
+      <span class="side-icon">&#x2605;</span>
+      <span>Team</span>
+    </a>
+    <a href="projects.html" class="side-item" data-page="projects">
+      <span class="side-icon">&#x2691;</span>
+      <span>Projects</span>
+    </a>
+    <a href="extras.html" class="side-item" data-page="extras">
+      <span class="side-icon">&#x25C6;</span>
+      <span>Extras</span>
+    </a>
+  </nav>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand" aria-hidden="true">&#x25C8; ABYSS</div>
+  </nav>
+
+  <main>
+    <section class="page-header" aria-label="Team header">
+      <div class="hero-badge" aria-hidden="true">&#x25C6; Void Collective &#x25C6;</div>
+      <h1 class="glitch" data-text="VOID WALKERS">VOID WALKERS</h1>
+      <p>The architects, dreamers, and shadow-weavers who shape the abyss. Each member brings a unique resonance to the collective.</p>
+    </section>
+
+    <div class="team-grid" role="list" aria-label="Team members">
+      <article class="team-member" role="listitem">
+        <div class="member-avatar">
+          <div class="member-avatar-placeholder" aria-hidden="true">A</div>
+        </div>
+        <h2 class="member-name">Archmage</h2>
+        <div class="role-badge" role="text">&#x2605; Void Architect</div>
+        <p class="member-bio">Founder and principal architect. Designs the underlying fabric of the abyss — the protocols, patterns, and pathways that define our digital reality.</p>
+        <div class="member-skills">
+          <span>Architecture</span>
+          <span>Rust</span>
+          <span>WebGL</span>
+          <span>Protocols</span>
+        </div>
+      </article>
+
+      <article class="team-member" role="listitem">
+        <div class="member-avatar">
+          <div class="member-avatar-placeholder" aria-hidden="true">SW</div>
+        </div>
+        <h2 class="member-name">Shadow Weaver</h2>
+        <div class="role-badge" role="text">Systems Engineer</div>
+        <p class="member-bio">Master of distributed systems and network拓扑. Weaves the threads of connectivity through the void, ensuring every node resonates in harmony.</p>
+        <div class="member-skills">
+          <span>Go</span>
+          <span>Kubernetes</span>
+          <span>Networks</span>
+          <span>DB</span>
+        </div>
+      </article>
+
+      <article class="team-member" role="listitem">
+        <div class="member-avatar">
+          <div class="member-avatar-placeholder" aria-hidden="true">VS</div>
+        </div>
+        <h2 class="member-name">Void Seer</h2>
+        <div class="role-badge" role="text">Frontend Alchemist</div>
+        <p class="member-bio">Transforms the abstract into the tangible. Specializes in WebGL, visual alchemy, and crafting immersive interfaces that bridge the void and the viewer.</p>
+        <div class="member-skills">
+          <span>Three.js</span>
+          <span>React</span>
+          <span>CSS</span>
+          <span>GLSL</span>
+        </div>
+      </article>
+
+      <article class="team-member" role="listitem">
+        <div class="member-avatar">
+          <div class="member-avatar-placeholder" aria-hidden="true">RC</div>
+        </div>
+        <h2 class="member-name">Rune Carrier</h2>
+        <div class="role-badge" role="text">Backend Forger</div>
+        <p class="member-bio">Forges the runes that power the abyss — high-performance services, data streams, and the arcane logic that drives our collective forward.</p>
+        <div class="member-skills">
+          <span>Python</span>
+          <span>GraphQL</span>
+          <span>Redis</span>
+          <span>Postgres</span>
+        </div>
+      </article>
+
+      <article class="team-member" role="listitem">
+        <div class="member-avatar">
+          <div class="member-avatar-placeholder" aria-hidden="true">&#x2726;</div>
+        </div>
+        <h2 class="member-name">Phantom</h2>
+        <div class="role-badge" role="text">Visual Designer</div>
+        <p class="member-bio">The phantom eye behind the aesthetic. Crafts the visual language of the abyss — from typography to texture, every pixel resonates with dark intent.</p>
+        <div class="member-skills">
+          <span>Figma</span>
+          <span>Typography</span>
+          <span>Motion</span>
+          <span>Brand</span>
+        </div>
+      </article>
+
+      <article class="team-member" role="listitem">
+        <div class="member-avatar">
+          <div class="member-avatar-placeholder" aria-hidden="true">AK</div>
+        </div>
+        <h2 class="member-name">Abyss Keeper</h2>
+        <div class="role-badge" role="text">Infrastructure Mage</div>
+        <p class="member-bio">Guardian of the infrastructure. Ensures the abyss remains stable, scalable, and secure. Watches the void so others may create within it.</p>
+        <div class="member-skills">
+          <span>Terraform</span>
+          <span>AWS</span>
+          <span>CI/CD</span>
+          <span>Security</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="section-divider"><span>&#x25C6; &#x25C6; &#x25C6; &#x25C6; &#x25C6;</span></div>
+  </main>
+
+  <button class="terminal-toggle" aria-label="Open terminal overlay" title="Open terminal (Ctrl+`)">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="4 17 10 11 4 5"></polyline>
+      <line x1="12" y1="19" x2="20" y2="19"></line>
+    </svg>
+  </button>
+
+  <div class="terminal-overlay" id="terminal" role="dialog" aria-label="Terminal console">
+    <div class="terminal-box">
+      <div class="terminal-header">
+        <span aria-hidden="true">abyss://console — team terminal</span>
+        <button class="terminal-close" aria-label="Close terminal">&times;</button>
+      </div>
+      <div class="terminal-body" id="terminal-body" role="log" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script type="module" src="js/particles.js"></script>
+  <script type="module" src="js/cursor.js"></script>
+  <script type="module" src="js/terminal.js"></script>
+  <script type="module" src="js/shared.js"></script>
+</body>
+</html>

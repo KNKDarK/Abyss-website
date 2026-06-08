@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Team Abyss Projects — Explore the collective's active projects and culture.">
+  <meta name="theme-color" content="#050508">
+  <title>Team Abyss — Projects &amp; Culture</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="loading-screen" id="loading-screen" role="status" aria-label="Loading">
+    <div class="loading-symbol" aria-hidden="true">&#x25C8;</div>
+    <div class="loading-text">Awaiting Abyss</div>
+    <div class="loading-dots" aria-hidden="true">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+    </div>
+  </div>
+
+  <div class="cursor" role="presentation" aria-hidden="true"></div>
+  <div class="cursor-dot" role="presentation" aria-hidden="true"></div>
+  <div class="cursor-glow" role="presentation" aria-hidden="true"></div>
+
+  <canvas id="particle-canvas" role="presentation" aria-hidden="true"></canvas>
+
+  <nav class="side-nav" id="side-nav" role="navigation" aria-label="Side navigation">
+    <a href="index.html" class="side-item" data-page="index">
+      <span class="side-icon">&#x25C8;</span>
+      <span>Home</span>
+    </a>
+    <a href="team.html" class="side-item" data-page="team">
+      <span class="side-icon">&#x2605;</span>
+      <span>Team</span>
+    </a>
+    <a href="projects.html" class="side-item active" data-page="projects" aria-current="page">
+      <span class="side-icon">&#x2691;</span>
+      <span>Projects</span>
+    </a>
+    <a href="extras.html" class="side-item" data-page="extras">
+      <span class="side-icon">&#x25C6;</span>
+      <span>Extras</span>
+    </a>
+  </nav>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand" aria-hidden="true">&#x25C8; ABYSS</div>
+  </nav>
+
+  <main>
+    <section class="page-header" aria-label="Projects header">
+      <div class="hero-badge" aria-hidden="true">&#x25C6; Forging the Future &#x25C6;</div>
+      <h1 class="glitch" data-text="PROJECTS & CULTURE">PROJECTS &amp; CULTURE</h1>
+      <p>A journey through our active projects and the culture that drives the abyss.</p>
+    </section>
+
+    <div class="projects-container">
+      <article class="project-card reveal" aria-label="Project Chimera">
+        <div class="project-number" aria-hidden="true">01</div>
+        <h3>Project Chimera</h3>
+        <p>A multi-protocol hybrid framework that bridges WebGL, WebGPU, and canvas rendering into a unified abyssal engine. Enables seamless cross-platform particle systems with real-time shader composition.</p>
+        <div class="project-tags">
+          <span>WebGL</span>
+          <span>WebGPU</span>
+          <span>GLSL</span>
+          <span>Rust</span>
+          <span>WASM</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal" aria-label="Abyss Protocol">
+        <div class="project-number" aria-hidden="true">02</div>
+        <h3>Abyss Protocol</h3>
+        <p>A real-time peer-to-peer communication protocol designed for low-latency data exchange across distributed nodes. Built with asynchronous Rust and a custom WebRTC wrapper for abyssal-grade connectivity.</p>
+        <div class="project-tags">
+          <span>Rust</span>
+          <span>WebRTC</span>
+          <span>P2P</span>
+          <span>Async</span>
+          <span>Protocol</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal" aria-label="Void Engine">
+        <div class="project-number" aria-hidden="true">03</div>
+        <h3>Void Engine</h3>
+        <p>Next-generation 3D rendering engine optimized for particle-rich environments. Features GPU-instanced rendering, dynamic LOD, and a custom abyssal shader library for otherworldly visual effects.</p>
+        <div class="project-tags">
+          <span>Three.js</span>
+          <span>WebGPU</span>
+          <span>GLSL</span>
+          <span>Compute</span>
+          <span>GPU</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal" aria-label="Shadow Network">
+        <div class="project-number" aria-hidden="true">04</div>
+        <h3>Shadow Network</h3>
+        <p>Distributed monitoring and observability platform designed for dark deployments. Provides real-time telemetry, anomaly detection, and automated remediation across the abyssal infrastructure.</p>
+        <div class="project-tags">
+          <span>Go</span>
+          <span>Prometheus</span>
+          <span>Grafana</span>
+          <span>Kubernetes</span>
+          <span>ML</span>
+        </div>
+      </article>
+
+      <article class="project-card reveal" aria-label="Abyssal Design System">
+        <div class="project-number" aria-hidden="true">05</div>
+        <h3>Abyssal Design System</h3>
+        <p>Our internal design framework for crafting immersive dark-fantasy UIs. Includes component libraries, animation primitives, particle presets, and accessibility patterns for abyssal-themed applications.</p>
+        <div class="project-tags">
+          <span>React</span>
+          <span>CSS</span>
+          <span>Framer</span>
+          <span>A11Y</span>
+          <span>Tokens</span>
+        </div>
+      </article>
+    </div>
+
+    <section class="section-divider" aria-hidden="true">
+      <span>&#x25C6; &#x25C6; &#x25C6; &#x25C6; &#x25C6;</span>
+    </section>
+
+    <div class="page-header" style="padding-top: 2rem;">
+      <h2>CULTURE</h2>
+      <p>What drives the void-walkers who shape this collective.</p>
+    </div>
+
+    <div class="projects-container">
+      <article class="project-card reveal abyss-energy" aria-label="Culture: Open Source">
+        <h3>Open Source First</h3>
+        <p>Everything we build begins in the open. Our repositories, protocols, and tools are available for the community to explore, fork, and contribute to. The abyss grows stronger with every contributor.</p>
+      </article>
+
+      <article class="project-card reveal abyss-energy" aria-label="Culture: Innovation">
+        <h3>Edge of Possibility</h3>
+        <p>We operate at the frontier of web technology. WebGL, WebGPU, WASM, and beyond — we push the limits of what browsers can do. If it hasn't been done before, that's where we start.</p>
+      </article>
+
+      <article class="project-card reveal abyss-energy" aria-label="Culture: Accessibility">
+        <h3>Darkness for All</h3>
+        <p>Immersive experiences should not exclude. We build with accessibility at the core — screen reader support, reduced motion preferences, keyboard navigation, and semantic HTML are non-negotiable.</p>
+      </article>
+    </div>
+  </main>
+
+  <button class="terminal-toggle" aria-label="Open terminal overlay" title="Open terminal (Ctrl+`)">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="4 17 10 11 4 5"></polyline>
+      <line x1="12" y1="19" x2="20" y2="19"></line>
+    </svg>
+  </button>
+
+  <div class="terminal-overlay" id="terminal" role="dialog" aria-label="Terminal console">
+    <div class="terminal-box">
+      <div class="terminal-header">
+        <span aria-hidden="true">abyss://console — team terminal</span>
+        <button class="terminal-close" aria-label="Close terminal">&times;</button>
+      </div>
+      <div class="terminal-body" id="terminal-body" role="log" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script type="module" src="js/particles.js"></script>
+  <script type="module" src="js/cursor.js"></script>
+  <script type="module" src="js/terminal.js"></script>
+  <script type="module" src="js/shared.js"></script>
+</body>
+</html>

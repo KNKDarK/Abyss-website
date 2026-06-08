@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Team Abyss Extras — Contact, community, and more from the collective.">
+  <meta name="theme-color" content="#050508">
+  <title>Team Abyss — Extras</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="loading-screen" id="loading-screen" role="status" aria-label="Loading">
+    <div class="loading-symbol" aria-hidden="true">&#x25C8;</div>
+    <div class="loading-text">Awaiting Abyss</div>
+    <div class="loading-dots" aria-hidden="true">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+    </div>
+  </div>
+
+  <div class="cursor" role="presentation" aria-hidden="true"></div>
+  <div class="cursor-dot" role="presentation" aria-hidden="true"></div>
+  <div class="cursor-glow" role="presentation" aria-hidden="true"></div>
+
+  <canvas id="particle-canvas" role="presentation" aria-hidden="true"></canvas>
+
+  <nav class="side-nav" id="side-nav" role="navigation" aria-label="Side navigation">
+    <a href="index.html" class="side-item" data-page="index">
+      <span class="side-icon">&#x25C8;</span>
+      <span>Home</span>
+    </a>
+    <a href="team.html" class="side-item" data-page="team">
+      <span class="side-icon">&#x2605;</span>
+      <span>Team</span>
+    </a>
+    <a href="projects.html" class="side-item" data-page="projects">
+      <span class="side-icon">&#x2691;</span>
+      <span>Projects</span>
+    </a>
+    <a href="extras.html" class="side-item active" data-page="extras" aria-current="page">
+      <span class="side-icon">&#x25C6;</span>
+      <span>Extras</span>
+    </a>
+  </nav>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand" aria-hidden="true">&#x25C8; ABYSS</div>
+  </nav>
+
+  <main>
+    <section class="page-header" aria-label="Extras header">
+      <div class="hero-badge" aria-hidden="true">&#x25C6; Beyond the Portal &#x25C6;</div>
+      <h1 class="glitch" data-text="EXTRAS">EXTRAS</h1>
+      <p>Beyond the core lies more — community, contact, and ways to join the abyss.</p>
+    </section>
+
+    <div class="extras-grid" role="list" aria-label="Extras options">
+      <article class="extra-card" role="listitem">
+        <span class="extra-icon" aria-hidden="true">&#x2606;</span>
+        <h3>Join the Collective</h3>
+        <p>We're always seeking void-walkers who share our vision. If you dream in code and think in particles, reach out.</p>
+        <a href="#" class="btn btn-primary" role="button" onclick="alert('Applications open soon. Watch the void.')">
+          Apply Now &#x2192;
+        </a>
+      </article>
+
+      <article class="extra-card" role="listitem">
+        <span class="extra-icon" aria-hidden="true">&#x2709;</span>
+        <h3>Contact Us</h3>
+        <p>Whether you want to collaborate, inquire, or simply gaze into the abyss — we welcome your signal.</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;align-items:center;">
+          <a href="#" class="btn btn-outline" role="button" onclick="alert('void@team.abyss — though mail takes time in the void.')">
+            Send Signal
+          </a>
+        </div>
+      </article>
+
+      <article class="extra-card" role="listitem">
+        <span class="extra-icon" aria-hidden="true">&#x2661;</span>
+        <h3>Support the Abyss</h3>
+        <p>Help us maintain the portal. Your contributions fuel the particles, shaders, and infrastructure that make the abyss possible.</p>
+        <a href="#" class="btn btn-abyss" role="button" onclick="alert('Sponsorship channels coming soon. The abyss thanks you.')">
+          Contribute &#x2192;
+        </a>
+      </article>
+
+      <article class="extra-card" role="listitem">
+        <span class="extra-icon" aria-hidden="true">&#x25C8;</span>
+        <h3>Community</h3>
+        <p>Join our discord server where void-walkers gather to share knowledge, showcase work, and discuss the future of abyssal computing.</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;align-items:center;">
+          <a href="#" class="btn btn-outline" role="button" onclick="alert('discord.gg/abyssal — entering the void...')">
+            Discord &#x2192;
+          </a>
+          <span style="font-size:0.75rem;color:var(--text-dim);">active 24/7</span>
+        </div>
+      </article>
+
+      <article class="extra-card" role="listitem">
+        <span class="extra-icon" aria-hidden="true">&#x2691;</span>
+        <h3>Open Source</h3>
+        <p>All our core tools and libraries are open source. Explore the repositories, open issues, and submit PRs to shape the abyss.</p>
+        <a href="#" class="btn btn-outline" role="button" onclick="alert('github.com/tms-collective — fork the void.')">
+          GitHub &#x2192;
+        </a>
+      </article>
+
+      <article class="extra-card" role="listitem">
+        <span class="extra-icon" aria-hidden="true">&#x2603;</span>
+        <h3>Newsletter</h3>
+        <p>Get abyssal updates delivered to your realm. Monthly digests on projects, culture, and the evolving landscape of void computing.</p>
+        <a href="#" class="btn btn-abyss" role="button" onclick="alert('Subscribe form — void signals incoming.')">
+          Subscribe &#x2192;
+        </a>
+      </article>
+    </div>
+
+    <div class="section-divider"><span>&#x25C6; &#x25C6; &#x25C6; &#x25C6; &#x25C6;</span></div>
+
+    <div style="text-align:center;padding:3rem 2rem;max-width:600px;margin:0 auto;">
+      <p style="color:var(--text-secondary);font-size:0.9rem;font-style:italic;">
+        "The abyss gazes also into you. But here, we gaze back — and we code."
+      </p>
+      <p style="color:var(--text-dim);font-size:0.8rem;margin-top:1rem;letter-spacing:2px;">
+        &#x25C6; Team Abyss &#x25C6;
+      </p>
+    </div>
+  </main>
+
+  <button class="terminal-toggle" aria-label="Open terminal overlay" title="Open terminal (Ctrl+`)">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="4 17 10 11 4 5"></polyline>
+      <line x1="12" y1="19" x2="20" y2="19"></line>
+    </svg>
+  </button>
+
+  <div class="terminal-overlay" id="terminal" role="dialog" aria-label="Terminal console">
+    <div class="terminal-box">
+      <div class="terminal-header">
+        <span aria-hidden="true">abyss://console — team terminal</span>
+        <button class="terminal-close" aria-label="Close terminal">&times;</button>
+      </div>
+      <div class="terminal-body" id="terminal-body" role="log" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script type="module" src="js/particles.js"></script>
+  <script type="module" src="js/cursor.js"></script>
+  <script type="module" src="js/terminal.js"></script>
+  <script type="module" src="js/shared.js"></script>
+</body>
+</html>
