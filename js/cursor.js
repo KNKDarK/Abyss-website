@@ -6,6 +6,99 @@ if (!cursor) {
   console.warn('Cursor elements not found');
 }
 
+function createBlackHoleProtonSVG() {
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('viewBox', '0 0 100 100');
+  svg.setAttribute('width', '36');
+  svg.setAttribute('height', '36');
+
+  const defs = document.createElementNS(svgNS, 'defs');
+  const grad = document.createElementNS(svgNS, 'radialGradient');
+  grad.setAttribute('id', 'bhGrad');
+  grad.setAttribute('cx', '35%');
+  grad.setAttribute('cy', '35%');
+  const stop1 = document.createElementNS(svgNS, 'stop');
+  stop1.setAttribute('offset', '0%');
+  stop1.setAttribute('stop-color', '#1a0033');
+  const stop2 = document.createElementNS(svgNS, 'stop');
+  stop2.setAttribute('offset', '45%');
+  stop2.setAttribute('stop-color', '#000');
+  const stop3 = document.createElementNS(svgNS, 'stop');
+  stop3.setAttribute('offset', '100%');
+  stop3.setAttribute('stop-color', '#000');
+  grad.appendChild(stop1);
+  grad.appendChild(stop2);
+  grad.appendChild(stop3);
+  defs.appendChild(grad);
+  svg.appendChild(defs);
+
+  const outerGlow = document.createElementNS(svgNS, 'circle');
+  outerGlow.setAttribute('cx', '50');
+  outerGlow.setAttribute('cy', '50');
+  outerGlow.setAttribute('r', '44');
+  outerGlow.setAttribute('fill', 'none');
+  outerGlow.setAttribute('stroke', 'rgba(139,106,255,0.15)');
+  outerGlow.setAttribute('stroke-width', '6');
+
+  const eventHorizon = document.createElementNS(svgNS, 'circle');
+  eventHorizon.setAttribute('cx', '50');
+  eventHorizon.setAttribute('cy', '50');
+  eventHorizon.setAttribute('r', '16');
+  eventHorizon.setAttribute('fill', 'url(#bhGrad)');
+
+  const innerAccretion = document.createElementNS(svgNS, 'circle');
+  innerAccretion.setAttribute('cx', '50');
+  innerAccretion.setAttribute('cy', '50');
+  innerAccretion.setAttribute('r', '13');
+  innerAccretion.setAttribute('fill', 'none');
+  innerAccretion.setAttribute('stroke', 'rgba(139,106,255,0.2)');
+  innerAccretion.setAttribute('stroke-width', '2');
+
+  const ringGroup = document.createElementNS(svgNS, 'g');
+  ringGroup.setAttribute('class', 'proton-ring');
+
+  const ringTrack = document.createElementNS(svgNS, 'circle');
+  ringTrack.setAttribute('cx', '50');
+  ringTrack.setAttribute('cy', '50');
+  ringTrack.setAttribute('r', '30');
+  ringTrack.setAttribute('fill', 'none');
+  ringTrack.setAttribute('stroke', 'rgba(139,106,255,0.35)');
+  ringTrack.setAttribute('stroke-width', '1.5');
+  ringTrack.setAttribute('stroke-dasharray', '3 6');
+  ringGroup.appendChild(ringTrack);
+
+  const positions = [
+    [50, 20], [50, 80], [20, 50], [80, 50],
+    [28.5, 28.5], [71.5, 28.5], [28.5, 71.5], [71.5, 71.5]
+  ];
+  positions.forEach(([cx, cy], i) => {
+    const dot = document.createElementNS(svgNS, 'circle');
+    dot.setAttribute('cx', cx);
+    dot.setAttribute('cy', cy);
+    dot.setAttribute('r', i < 4 ? '2.5' : '1.8');
+    dot.setAttribute('fill', i < 4 ? '#c8b0ff' : 'rgba(200,176,255,0.5)');
+    ringGroup.appendChild(dot);
+  });
+
+  const singularity = document.createElementNS(svgNS, 'circle');
+  singularity.setAttribute('cx', '50');
+  singularity.setAttribute('cy', '50');
+  singularity.setAttribute('r', '3');
+  singularity.setAttribute('fill', '#c8b0ff');
+
+  svg.appendChild(outerGlow);
+  svg.appendChild(eventHorizon);
+  svg.appendChild(innerAccretion);
+  svg.appendChild(ringGroup);
+  svg.appendChild(singularity);
+  return svg;
+}
+
+if (cursor) {
+  cursor.appendChild(createBlackHoleProtonSVG());
+}
+
 const state = {
   x: 0, y: 0,
   dotX: 0, dotY: 0,
@@ -13,46 +106,6 @@ const state = {
   isVisible: true,
   isHovering: false,
 };
-
-function createDevilCursorSVG() {
-  const svgNS = 'http://www.w3.org/2000/svg';
-  const svg = document.createElementNS(svgNS, 'svg');
-  svg.setAttribute('viewBox', '0 0 100 100');
-  svg.setAttribute('width', '32');
-  svg.setAttribute('height', '32');
-
-  const pentagram = document.createElementNS(svgNS, 'path');
-  pentagram.setAttribute('d', 'M50 5 L63 38 L98 38 L70 60 L79 95 L50 75 L21 95 L30 60 L2 38 L37 38 Z');
-  pentagram.setAttribute('fill', 'none');
-  pentagram.setAttribute('stroke', '#6c3bff');
-  pentagram.setAttribute('stroke-width', '3');
-  pentagram.setAttribute('stroke-linejoin', 'round');
-
-  const circle = document.createElementNS(svgNS, 'circle');
-  circle.setAttribute('cx', '50');
-  circle.setAttribute('cy', '50');
-  circle.setAttribute('r', '43');
-  circle.setAttribute('fill', 'none');
-  circle.setAttribute('stroke', '#6c3bff');
-  circle.setAttribute('stroke-width', '2');
-  circle.setAttribute('opacity', '0.5');
-
-  const innerCircle = document.createElementNS(svgNS, 'circle');
-  innerCircle.setAttribute('cx', '50');
-  innerCircle.setAttribute('cy', '50');
-  innerCircle.setAttribute('r', '8');
-  innerCircle.setAttribute('fill', '#6c3bff');
-  innerCircle.setAttribute('opacity', '0.8');
-
-  svg.appendChild(pentagram);
-  svg.appendChild(circle);
-  svg.appendChild(innerCircle);
-  return svg;
-}
-
-if (cursor) {
-  cursor.appendChild(createDevilCursorSVG());
-}
 
 document.addEventListener('mousemove', (e) => {
   state.x = e.clientX;
